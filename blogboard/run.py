@@ -46,13 +46,13 @@ def main():
 Examples
 --------
   # Generate today's article (IST):
-  python backend/run.py
+  python blogboard/run.py
 
   # Generate for a specific date:
-  python backend/run.py --date 2026-03-07
+  python blogboard/run.py --date 2026-03-07
 
   # Dry run — no LLM calls, no file writes:
-  python backend/run.py --dry-run
+  python blogboard/run.py --dry-run
         """,
     )
     parser.add_argument(
@@ -103,8 +103,8 @@ Examples
         print(f"  Chosen Domain : {domain}")
         print(f"  Chosen Topic  : {topic}")
         print(f"  Would have generated:")
-        print(f"    -> frontend/blogs/{domain}/{slug}.md")
-        print(f"    -> frontend/blogs/{domain}/articles.json")
+        print(f"    -> r2://blogs/{domain}/{slug}.md")
+        print(f"    -> r2://blogs/{domain}/articles.json")
     else:
         domain    = final_state.get("domain", "?")
         title     = final_state.get("title", "?")

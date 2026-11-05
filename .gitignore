@@ -169,6 +169,3 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
-
-# BlogBoard Frontend Config
-frontend/js/config.js

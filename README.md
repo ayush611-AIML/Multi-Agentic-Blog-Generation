@@ -11,20 +11,44 @@ Powered by **LangGraph** for stateful workflow execution and **Groq** for blazin
 
 ## Library Requirements
 
- - Python 3.12+
- - langgraph>=0.2.20
- - groq>=0.11.0
- - python-dotenv>=1.0.1
+ - Python 3.13+
  - uv (for dependency management)
 
-## Getting Started
+## Deploy the Website to Vercel
 
-This will help you understand how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+The website is a static frontend in `blogboard/web`. The included `vercel.json`
+serves that directory directly; no build command or Vercel environment variables
+are required. Article indexes and markdown files are loaded from the public
+Cloudflare R2 URL configured in `blogboard/web/js/config.js`.
 
-## Installation Steps
+1. Import this project into Vercel from your Git provider.
+2. If the project is inside a larger repository, set **Root Directory** to
+   `BlogBoard-AI-Blog-Generator` (the directory containing this README and
+   `vercel.json`). Otherwise, use the repository root.
+3. Keep the **Framework Preset** set to **Other**. The build command and output
+   directory are already configured in `vercel.json`.
+4. Deploy. Vercel serves `blogboard/web/index.html` and its sibling assets.
 
-### Installation from GitHub
+The frontend configuration contains only the public R2 URL, not credentials.
+If you use a different bucket, update `R2_PUBLIC_URL` in
+`blogboard/web/js/config.js` to its public URL before deploying. The bucket must
+allow public reads (including browser CORS requests).
+
+The Python article-generation workflow is separate from the website and is not
+deployed as a Vercel API or function. It still needs its own Python environment
+and secret API credentials.
+
+## Run the Website Locally
+
+Preview the static website from the project directory:
+
+```bash
+python -m http.server 8000 --directory blogboard/web
+```
+
+Open `http://localhost:8000`.
+
+## Run the Article Generator
 
 Follow these steps to install and set up the project directly from the GitHub repository:
 
@@ -58,39 +82,29 @@ Follow these steps to install and set up the project directly from the GitHub re
      ```
    - Run the following command to install project dependencies:
      ```bash
-     uv pip install -r backend/requirements.txt
+     uv sync
      ```
 
 5. **Run the Project**
    - Start the backend pipeline by running the appropriate command:
      ```bash
-     python backend/run.py
+     uv run python blogboard/run.py
      ```
 
 6. **Access the Project**
    - Serve the frontend locally using Python's built-in HTTP server:
      ```bash
-     python -m http.server 8000 --directory frontend
+     python -m http.server 8000 --directory blogboard/web
      ```
    - Open a web browser and navigate to `http://localhost:8000`.
 
 
-## API Key Setup
+## Generator Credentials
 
-To use this project, you need an API key from Groq to power the Large Language Model inference. Follow these steps to obtain and set up your API key:
-
-1. **Get API Key:**
-   - Visit the Groq Console at [console.groq.com](https://console.groq.com/).
-   - Follow the instructions to create an account and obtain your API key.
-
-2. **Set Up API Key:**
-   - Create a file named `.env` in the project root.
-   - Add your API key to the `.env` file:
-     ```dotenv
-     GROQ_API_KEY=your_api_key_here
-     ```
-
-   **Note:** Keep your API key confidential. Do not share it publicly or expose it in your code.<br>
+The static website does not need API credentials. To run the separate article
+generator, copy `.env.example` to `.env` and supply the required Groq, Cloudflare
+R2, and content-provider credentials. Keep `.env` private and never add secrets
+to frontend JavaScript or commit them to the repository.
 
 ## Contributing
 
