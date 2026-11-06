@@ -38,6 +38,31 @@ The Python article-generation workflow is separate from the website and is not
 deployed as a Vercel API or function. It still needs its own Python environment
 and secret API credentials.
 
+### Automatically publish one article per week
+
+The GitHub Actions workflow in `.github/workflows/weekly-article.yml` generates
+and publishes one tutorial article every Monday at 8:00 AM India Standard Time.
+It chooses the least recently updated tutorial category. The workflow can also
+be started manually from the repository's **Actions** tab.
+
+Before enabling it, add these repository **Actions secrets** under
+**Settings → Secrets and variables → Actions**:
+
+- `LLM__API_KEY`
+- `R2__ACCOUNT_ID`
+- `R2__ACCESS_KEY_ID`
+- `R2__SECRET_ACCESS_KEY`
+- `R2__BUCKET_NAME`
+- `CONTENT__TAVILY_API_KEY`
+- `CONTENT__GUARDIAN_API_KEY`
+- `CONTENT__UNSPLASH_API_KEY`
+
+These are private backend credentials; do not put them in website JavaScript or
+commit them to the repository. The workflow uploads new article content and its
+category index to R2, which the website reads. Deploy the site to Vercel
+separately. This schedule adds about 52 articles per year; it does not create
+10,000 articles immediately.
+
 ## Run the Website Locally
 
 Preview the static website from the project directory:

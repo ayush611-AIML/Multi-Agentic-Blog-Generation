@@ -1,0 +1,35 @@
+[
+  {
+    "id": "blogs/cv/object-detection-pipeline.md",
+    "category": "cv",
+    "topic": "Object Detection",
+    "title": "Building an Object Detection Pipeline That Holds Up",
+    "description": "Plan data, labels, evaluation, and monitoring for object detection in real environments.",
+    "date": "2026-11-06",
+    "tags": ["computer-vision", "object-detection", "evaluation"],
+    "readTime": "2 min",
+    "file": "blogs/cv/object-detection-pipeline.md"
+  },
+  {
+    "id": "blogs/cv/image-segmentation.md",
+    "category": "cv",
+    "topic": "Image Segmentation",
+    "title": "Image Segmentation: From Masks to Reliable Decisions",
+    "description": "Understand pixel-level prediction, segmentation metrics, and deployment pitfalls.",
+    "date": "2026-11-06",
+    "tags": ["computer-vision", "segmentation", "deep-learning"],
+    "readTime": "2 min",
+    "file": "blogs/cv/image-segmentation.md"
+  },
+  {
+    "id": "blogs/cv/vision-language-models.md",
+    "category": "cv",
+    "topic": "Vision-Language Models",
+    "title": "Vision-Language Models: Capabilities and Limits",
+    "description": "Learn how image and text representations are aligned and how to test multimodal systems.",
+    "date": "2026-11-06",
+    "tags": ["computer-vision", "multimodal", "evaluation"],
+    "readTime": "2 min",
+    "file": "blogs/cv/vision-language-models.md"
+  }
+]

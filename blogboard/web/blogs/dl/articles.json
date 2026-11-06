@@ -2,17 +2,34 @@
   {
     "id": "blogs/dl/deep-learning-intro.md",
     "category": "dl",
-    "title": "Deep Learning Intro",
-    "description": "Learn deep learning fundamentals and boost your AI skills",
-    "date": "2026-03-03",
-    "tags": [
-      "deep-learning",
-      "neural-networks",
-      "artificial-intelligence",
-      "machine-learning",
-      "ai-models"
-    ],
-    "readTime": "8 min",
+    "topic": "Deep Learning Fundamentals",
+    "title": "Deep Learning in Practice: Training, Transfer, and Trade-offs",
+    "description": "Learn how neural networks train, when transfer learning helps, and how to diagnose common failures.",
+    "date": "2026-11-06",
+    "tags": ["deep-learning", "neural-networks", "pytorch"],
+    "readTime": "2 min",
     "file": "blogs/dl/deep-learning-intro.md"
+  },
+  {
+    "id": "blogs/dl/efficient-fine-tuning.md",
+    "category": "dl",
+    "topic": "Fine-Tuning",
+    "title": "Efficient Fine-Tuning: Adapt Models with Less Compute",
+    "description": "Compare full fine-tuning, frozen backbones, and parameter-efficient adaptation strategies.",
+    "date": "2026-11-06",
+    "tags": ["deep-learning", "fine-tuning", "transfer-learning"],
+    "readTime": "2 min",
+    "file": "blogs/dl/efficient-fine-tuning.md"
+  },
+  {
+    "id": "blogs/dl/inference-optimization.md",
+    "category": "dl",
+    "topic": "Inference Optimization",
+    "title": "Faster Neural Network Inference: Batching and Quantization",
+    "description": "Reduce serving latency and resource use while measuring the quality trade-offs.",
+    "date": "2026-11-06",
+    "tags": ["deep-learning", "inference", "quantization"],
+    "readTime": "2 min",
+    "file": "blogs/dl/inference-optimization.md"
   }
 ]

@@ -1,0 +1,44 @@
+name: Publish weekly article
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: weekly-article-publishing
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync --locked --no-dev
+
+      - name: Generate and publish article
+        run: uv run --locked python blogboard/run.py
+        env:
+          LLM__API_KEY: ${{ secrets.LLM__API_KEY }}
+          R2__ACCOUNT_ID: ${{ secrets.R2__ACCOUNT_ID }}
+          R2__ACCESS_KEY_ID: ${{ secrets.R2__ACCESS_KEY_ID }}
+          R2__SECRET_ACCESS_KEY: ${{ secrets.R2__SECRET_ACCESS_KEY }}
+          R2__BUCKET_NAME: ${{ secrets.R2__BUCKET_NAME }}
+          CONTENT__TAVILY_API_KEY: ${{ secrets.CONTENT__TAVILY_API_KEY }}
+          CONTENT__GUARDIAN_API_KEY: ${{ secrets.CONTENT__GUARDIAN_API_KEY }}
+          CONTENT__UNSPLASH_API_KEY: ${{ secrets.CONTENT__UNSPLASH_API_KEY }}

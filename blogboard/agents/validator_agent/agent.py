@@ -78,7 +78,9 @@ def validator_node(state: BlogState) -> BlogState:
     md_relative = f"blogs/{domain}/{slug_value}.md"
     storage = R2StorageService()
     
-    storage.put_object(md_relative, content, content_type="text/markdown")
+    if not storage.put_object(md_relative, content, content_type="text/markdown"):
+        raise RuntimeError(f"Failed to publish article content to R2: {md_relative}")
+
     articles = storage.get_articles_json(domain)
     articles = [a for a in articles if a.get("id") != md_relative]
     
@@ -94,9 +96,10 @@ def validator_node(state: BlogState) -> BlogState:
         "readTime": state.get("read_time", "5 min"),
         "file": md_relative,
     })
-    
+
     articles = sorted(articles, key=lambda x: x["date"], reverse=True)
-    storage.save_articles_json(domain, articles)
+    if not storage.save_articles_json(domain, articles):
+        raise RuntimeError(f"Failed to update the R2 article index for {domain}")
     
     return {
         **state,

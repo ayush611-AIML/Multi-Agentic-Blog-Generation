@@ -1,18 +1,46 @@
 [
   {
+    "id": "blogs/ml/ethics-in-machine-learning.md",
+    "category": "ml",
+    "topic": "Responsible Machine Learning",
+    "title": "Ethical Machine Learning: A Practical Risk Review",
+    "description": "A practical framework for checking fairness, privacy, transparency, and oversight throughout an ML project.",
+    "date": "2026-11-06",
+    "tags": ["machine-learning", "responsible-ai", "fairness"],
+    "readTime": "2 min",
+    "file": "blogs/ml/ethics-in-machine-learning.md"
+  },
+  {
+    "id": "blogs/ml/machine-learning-basics.md",
+    "category": "ml",
+    "topic": "Machine Learning Fundamentals",
+    "title": "Machine Learning Basics: From Data to Decisions",
+    "description": "Understand the learning loop, common problem types, and the checks that make predictions useful.",
+    "date": "2026-11-06",
+    "tags": ["machine-learning", "supervised-learning", "evaluation"],
+    "readTime": "2 min",
+    "file": "blogs/ml/machine-learning-basics.md"
+  },
+  {
+    "id": "blogs/ml/unlocking-machine-learning-a-technical-dive.md",
+    "category": "ml",
+    "topic": "Reliable ML Development",
+    "title": "A Technical Guide to Reliable Machine Learning",
+    "description": "Follow a leakage-aware workflow from problem framing and data splits to deployment monitoring.",
+    "date": "2026-11-06",
+    "tags": ["machine-learning", "scikit-learn", "mlops"],
+    "readTime": "2 min",
+    "file": "blogs/ml/unlocking-machine-learning-a-technical-dive.md"
+  },
+  {
     "id": "blogs/ml/machine-learning-explained.md",
     "category": "ml",
-    "title": "Machine Learning Explained",
-    "description": "Discover the basics of machine learning and its applications, learn how to get started",
-    "date": "2026-03-02",
-    "tags": [
-      "machine-learning",
-      "artificial-intelligence",
-      "deep-learning",
-      "natural-language-processing",
-      "data-science"
-    ],
-    "readTime": "6 min",
+    "topic": "Model Evaluation",
+    "title": "Beyond Accuracy: Choosing the Right ML Metrics",
+    "description": "Select metrics that reflect class balance, decision costs, calibration, and real deployment needs.",
+    "date": "2026-11-06",
+    "tags": ["machine-learning", "model-evaluation", "metrics"],
+    "readTime": "2 min",
     "file": "blogs/ml/machine-learning-explained.md"
   }
 ]

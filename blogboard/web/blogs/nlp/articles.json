@@ -1,0 +1,35 @@
+[
+  {
+    "id": "blogs/nlp/llm-evaluation-practical-guide.md",
+    "category": "nlp",
+    "topic": "Language Model Evaluation",
+    "title": "Evaluating LLM Applications with Task-Focused Tests",
+    "description": "Build repeatable evaluations for correctness, groundedness, safety, and user experience.",
+    "date": "2026-11-06",
+    "tags": ["nlp", "llm", "evaluation"],
+    "readTime": "2 min",
+    "file": "blogs/nlp/llm-evaluation-practical-guide.md"
+  },
+  {
+    "id": "blogs/nlp/multilingual-nlp.md",
+    "category": "nlp",
+    "topic": "Multilingual NLP",
+    "title": "Multilingual NLP: Tokenization, Data, and Evaluation",
+    "description": "Design language technology that works across scripts, dialects, and uneven data coverage.",
+    "date": "2026-11-06",
+    "tags": ["nlp", "multilingual", "tokenization"],
+    "readTime": "2 min",
+    "file": "blogs/nlp/multilingual-nlp.md"
+  },
+  {
+    "id": "blogs/nlp/retrieval-augmented-generation.md",
+    "category": "nlp",
+    "topic": "Retrieval-Augmented Generation",
+    "title": "RAG Evaluation: Measure Retrieval Before Generation",
+    "description": "Diagnose retrieval-augmented systems by testing source coverage, relevance, and answer grounding separately.",
+    "date": "2026-11-06",
+    "tags": ["nlp", "rag", "information-retrieval"],
+    "readTime": "2 min",
+    "file": "blogs/nlp/retrieval-augmented-generation.md"
+  }
+]

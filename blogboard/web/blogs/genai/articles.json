@@ -1,0 +1,46 @@
+[
+  {
+    "id": "blogs/genai/advanced-concepts.md",
+    "category": "genai",
+    "topic": "Efficient Generative Models",
+    "title": "Quantization and Efficient Generative Model Inference",
+    "description": "Understand how lower-precision inference can reduce memory and what to measure before deployment.",
+    "date": "2026-11-06",
+    "tags": ["generative-ai", "quantization", "inference"],
+    "readTime": "2 min",
+    "file": "blogs/genai/advanced-concepts.md"
+  },
+  {
+    "id": "blogs/genai/introduction-to-generative-ai-unlocking-creative-p.md",
+    "category": "genai",
+    "topic": "Generative AI Fundamentals",
+    "title": "Generative AI: How Models Create and Where They Fail",
+    "description": "A grounded introduction to generative models, prompting, evaluation, and responsible use.",
+    "date": "2026-11-06",
+    "tags": ["generative-ai", "llm", "diffusion"],
+    "readTime": "2 min",
+    "file": "blogs/genai/introduction-to-generative-ai-unlocking-creative-p.md"
+  },
+  {
+    "id": "blogs/genai/exploring-generative-ai-real-world-use-cases.md",
+    "category": "genai",
+    "topic": "Generative AI Applications",
+    "title": "Generative AI Use Cases: Match the Model to the Work",
+    "description": "Compare generation tasks and design review, privacy, and quality checks into real workflows.",
+    "date": "2026-11-06",
+    "tags": ["generative-ai", "applications", "responsible-ai"],
+    "readTime": "2 min",
+    "file": "blogs/genai/exploring-generative-ai-real-world-use-cases.md"
+  },
+  {
+    "id": "blogs/genai/reliable-ai-agents.md",
+    "category": "genai",
+    "topic": "AI Agents",
+    "title": "Reliable AI Agents: Tools, State, and Guardrails",
+    "description": "Build bounded agent workflows with clear permissions, observable steps, and human approval.",
+    "date": "2026-11-06",
+    "tags": ["generative-ai", "agents", "safety"],
+    "readTime": "2 min",
+    "file": "blogs/genai/reliable-ai-agents.md"
+  }
+]

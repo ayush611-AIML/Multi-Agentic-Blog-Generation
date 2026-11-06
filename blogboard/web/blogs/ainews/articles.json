@@ -1,16 +1,35 @@
 [
   {
+    "id": "blogs/ainews/latest-ai-news.md",
+    "category": "ainews",
+    "topic": "AI Governance and Deployment",
+    "title": "AI in 2026: From Model Demos to Managed Risk",
+    "description": "A source-backed look at the practical shift toward evaluation, governance, and context-specific AI deployment.",
+    "date": "2026-11-06",
+    "tags": ["ai-news", "governance", "deployment"],
+    "readTime": "2 min",
+    "file": "blogs/ainews/latest-ai-news.md"
+  },
+  {
     "id": "blogs/ainews/the-week-in-ai-1.md",
     "category": "ainews",
-    "title": "The Week in AI #1",
-    "description": "The past week has seen significant developments in the artificial intelligence industry, marking a potential structural shift in its development, deployment, and regulation.",
-    "date": "2026-02-27",
-    "tags": [
-      "ainews",
-      "artificial intelligence",
-      "weekly roundup"
-    ],
-    "readTime": "7 min",
+    "topic": "AI Industry Briefing",
+    "title": "AI Industry Briefing: What to Verify Before Adopting a Model",
+    "description": "A practical briefing on reading AI announcements with evidence, evaluation results, and risk context.",
+    "date": "2026-11-06",
+    "tags": ["ai-news", "model-evaluation", "industry"],
+    "readTime": "2 min",
     "file": "blogs/ainews/the-week-in-ai-1.md"
+  },
+  {
+    "id": "blogs/ainews/nist-critical-infrastructure-ai-profile.md",
+    "category": "ainews",
+    "topic": "AI and Critical Infrastructure",
+    "title": "NIST's 2026 AI Risk Profile for Critical Infrastructure",
+    "description": "What NIST's April 2026 concept note signals for organizations using AI in critical infrastructure.",
+    "date": "2026-11-06",
+    "tags": ["ai-news", "nist", "critical-infrastructure"],
+    "readTime": "2 min",
+    "file": "blogs/ainews/nist-critical-infrastructure-ai-profile.md"
   }
 ]
