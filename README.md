@@ -18,8 +18,9 @@ Powered by **LangGraph** for stateful workflow execution and **Groq** for blazin
 
 The website is a static frontend in `blogboard/web`. The included `vercel.json`
 serves that directory directly; no build command or Vercel environment variables
-are required. Article indexes and markdown files are loaded from the public
-Cloudflare R2 URL configured in `blogboard/web/js/config.js`.
+are required. Article indexes and markdown files are served from the deployed
+site itself, from `blogboard/web/blogs`. Changes to these files appear when the
+site is redeployed.
 
 1. Import this project into Vercel from your Git provider.
 2. If the project is inside a larger repository, set **Root Directory** to
@@ -29,21 +30,15 @@ Cloudflare R2 URL configured in `blogboard/web/js/config.js`.
    directory are already configured in `vercel.json`.
 4. Deploy. Vercel serves `blogboard/web/index.html` and its sibling assets.
 
-The frontend configuration contains only the public R2 URL, not credentials.
-If you use a different bucket, update `R2_PUBLIC_URL` in
-`blogboard/web/js/config.js` to its public URL before deploying. The bucket must
-allow public reads (including browser CORS requests).
-
 The Python article-generation workflow is separate from the website and is not
 deployed as a Vercel API or function. It still needs its own Python environment
 and secret API credentials.
 
-### Automatically publish one article per week
+### Run the article generator from GitHub Actions
 
-The GitHub Actions workflow in `.github/workflows/weekly-article.yml` generates
-and publishes one tutorial article every Monday at 8:00 AM India Standard Time.
-It chooses the least recently updated tutorial category. The workflow can also
-be started manually from the repository's **Actions** tab.
+The GitHub Actions workflow in `.github/workflows/weekly-article.yml` can be
+started manually from the repository's **Actions** tab. Automatic scheduled
+runs are disabled.
 
 Before enabling it, add these repository **Actions secrets** under
 **Settings → Secrets and variables → Actions**:
@@ -58,10 +53,10 @@ Before enabling it, add these repository **Actions secrets** under
 - `CONTENT__UNSPLASH_API_KEY`
 
 These are private backend credentials; do not put them in website JavaScript or
-commit them to the repository. The workflow uploads new article content and its
-category index to R2, which the website reads. Deploy the site to Vercel
-separately. This schedule adds about 52 articles per year; it does not create
-10,000 articles immediately.
+commit them to the repository. The generator uploads article content and its
+category index to R2. To show generated articles on the static website, add the
+generated Markdown and matching index entry under `blogboard/web/blogs`, then
+push the changes so Vercel redeploys the site.
 
 ## Run the Website Locally
 
